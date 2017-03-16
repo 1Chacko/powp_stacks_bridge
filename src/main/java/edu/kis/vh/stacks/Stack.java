@@ -4,7 +4,7 @@ public class Stack {
 
 	private StackArray stackArray;
 	
-	public Stack(int[] iTEMS, int total, StackArray stackArray) {
+	public Stack(StackArray stackArray) {
 		super();
 		this.stackArray = stackArray;
 	}
