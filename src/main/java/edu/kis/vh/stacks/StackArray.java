@@ -1,6 +1,6 @@
 package edu.kis.vh.stacks;
 
-public class StackArray {
+public class StackArray{
 	
 	private final int EMPTY_STACK_INDICATOR = -1;//final dodany wcześniej
 	private final int FULL_STACK_INDICATOR = 11;//final dodany wcześniej
