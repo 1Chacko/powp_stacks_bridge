@@ -57,9 +57,7 @@ public class stackTest {
 		
 		//Jeśli nie można ustawić z góry wielkości StackList dodaje drugi test,
 		//gdzie używam obiektu Stack opartego na StackArray.
-		//W tym przypadku zwiększyłem tablicę ITEMS w klasie StackArray na 13.
-		//Wydaje się to być naturalne, skoro w punkcie 3.1.11 ustawiliśmy
-		//wartość wskaznika pustego stosu z -1 na 0.
+		//W tym przypadku zmieniłem ++total na total++ .
 		
 		Stack stackObj = new Stack(new StackArray());
 		for (int i = 0; i < StackArray.FULL_STACK_INDICATOR; i++) {
