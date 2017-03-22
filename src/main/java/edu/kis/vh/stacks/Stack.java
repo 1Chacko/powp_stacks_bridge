@@ -36,4 +36,7 @@ public class Stack {
 	}
 	
 	//Navigate -> Open Declaration (F3) uzyte na wywolaniu metody przeskakuje do deklaracji tej metody
+	
+	//Mozemy wyslac do konstruktora klase implementujaca  interfejs IStack
+	//dzięki czemu możemy okreslic sposob implementacji stosu
 }
