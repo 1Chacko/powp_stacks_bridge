@@ -45,4 +45,6 @@ public class Stack {
 	//i klasy tą metodę implementujące
 	//Natomiast korzystając z (ctrl + kursor) otwiera sie małe menu z wyborem do przejścia
 	//w miejsce deklaracji lub implementacji danej metody
+	
+	//Uważam, że zasadę izolacji łamią fabryki, bo od implementacji zależy zwrócona abstrakcja stosu.
 }
