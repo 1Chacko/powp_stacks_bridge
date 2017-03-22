@@ -1,13 +1,15 @@
 package edu.kis.vh.stacks.list;
 
-public class StackList {
+import edu.kis.vh.stacks.IStack;
+
+public class StackList implements IStack {
 	
 	//Przydatny w punkcie 3.1.4 jest refactor -> rename
 	
 	private Node lastNode; //po enkapsulacji modyfikator zmienił się na prywatny i dodano getter i setter
 	private static final int EMPTY_STACK_INDICATOR = -1; //final dodany wcześniej
 
-	public void pushElement(int nodeNumber) {
+	public void push(int nodeNumber) {
 		if (lastNode == null)
 			lastNode = new Node(nodeNumber);
 		else {
@@ -17,22 +19,22 @@ public class StackList {
 		}
 	}
 
-	public boolean empty() {
+	public boolean isEmpty() {
 		return lastNode == null;
 	}
 
-	public boolean full() {
+	public boolean isFull() {
 		return false;
 	}
 
-	public int peek() {
-		if (empty())
+	public int top() {
+		if (isEmpty())
 			return EMPTY_STACK_INDICATOR;
 		return lastNode.getValue();
 	}
 
 	public int pop() {
-		if (empty())
+		if (isEmpty())
 			return EMPTY_STACK_INDICATOR;
 		int topValue = lastNode.getValue();
 		lastNode = lastNode.getPreviousValue();
