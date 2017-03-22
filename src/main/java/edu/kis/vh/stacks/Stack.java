@@ -4,7 +4,7 @@ import edu.kis.vh.stacks.types.StackList;
 
 public class Stack {
 
-	private IStack intStack;
+	private IStack intStack; //Niepotrzebna wcześniejsza zmiana na public
 	
 	public Stack(IStack istack) {
 		super();
