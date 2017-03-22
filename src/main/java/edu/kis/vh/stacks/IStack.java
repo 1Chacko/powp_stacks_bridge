@@ -2,7 +2,7 @@ package edu.kis.vh.stacks;
 
 public interface IStack {
 
-	public final int EMPTY_STACK_INDICATOR = -1;//final dodany wcześniej
+	public final int EMPTY_STACK_INDICATOR = 0;//final dodany wcześniej
 
 	void push(int i);
 
@@ -13,5 +13,7 @@ public interface IStack {
 	int top();
 
 	int pop();
-
+	
+	//Pomogła mi w tym realizacja zadania 10,
+	//ponieważ musiałem zmienić wartośc z -1 na 0 jedynie w jednym miejscu, a nie szukać tej wartośći po kilku klasach. 
 }
