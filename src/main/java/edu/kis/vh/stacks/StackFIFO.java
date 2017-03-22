@@ -9,7 +9,7 @@ import edu.kis.vh.stacks.types.StackList;
  */
 public class StackFIFO extends Stack {
 
-	private Stack temp = new Stack(); //po enkapsulacji dodanie gettera i settera po enkapsulacji
+	private Stack temp = new Stack(new StackList()); //po enkapsulacji dodanie gettera i settera po enkapsulacji
 	
 	public StackFIFO() {
 		super();
@@ -42,5 +42,7 @@ public class StackFIFO extends Stack {
 		return topValue;
 	}
 	
-	
+	//Lepszym wyborem wydaje mi się być StackList.
+	//Wydaje się bardziej naturalnym wyborem do FIFO,
+	//gdyż niepotrzebne są dodatkowe przesunięcia po ewentualnym usunięcie pierwszego elementu.
 }
