@@ -1,7 +1,5 @@
 package edu.kis.vh.stacks;
 
-import edu.kis.vh.stacks.types.StackList;
-
 public class StackHanoi extends Stack {
 
 	private int totalRejected = 0;
@@ -10,8 +8,8 @@ public class StackHanoi extends Stack {
 		super();
 	}
 
-	public StackHanoi(StackList stackList) {
-		super(stackList);
+	public StackHanoi(IStack istack) {
+		super(istack);
 	}
 
 	public int reportRejected() {

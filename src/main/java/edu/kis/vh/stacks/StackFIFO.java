@@ -15,8 +15,8 @@ public class StackFIFO extends Stack {
 		super();
 	}
 
-	public StackFIFO(StackList stackList) {
-		super(stackList);
+	public StackFIFO(IStack istack) {
+		super(istack);
 	}
 
 	/**
