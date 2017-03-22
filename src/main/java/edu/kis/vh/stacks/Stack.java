@@ -34,5 +34,6 @@ public class Stack {
 	public int pop() {
 		return intStack.pop();
 	}
-				
+	
+	//Navigate -> Open Declaration (F3) uzyte na wywolaniu metody przeskakuje do deklaracji tej metody
 }
