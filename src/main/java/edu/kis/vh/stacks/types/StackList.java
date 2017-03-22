@@ -7,7 +7,6 @@ public class StackList implements IStack {
 	//Przydatny w punkcie 3.1.4 jest refactor -> rename
 	
 	private Node lastNode; //po enkapsulacji modyfikator zmienił się na prywatny i dodano getter i setter
-	private static final int EMPTY_STACK_INDICATOR = -1; //final dodany wcześniej
 
 	public void push(int nodeNumber) {
 		if (lastNode == null)

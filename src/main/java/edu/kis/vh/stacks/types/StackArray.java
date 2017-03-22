@@ -4,7 +4,6 @@ import edu.kis.vh.stacks.IStack;
 
 public class StackArray implements IStack{
 	
-	private final int EMPTY_STACK_INDICATOR = -1;//final dodany wcześniej
 	private final int FULL_STACK_INDICATOR = 11;//final dodany wcześniej
 
 	private int[] ITEMS = new int[12];	
