@@ -7,7 +7,9 @@ public class StackList implements IStack {
 	//Przydatny w punkcie 3.1.4 jest refactor -> rename
 	
 	private Node lastNode; //po enkapsulacji modyfikator zmienił się na prywatny i dodano getter i setter
-
+	
+	public int total = EMPTY_STACK_INDICATOR;
+	
 	public void push(int nodeNumber) {
 		if (lastNode == null)
 			lastNode = new Node(nodeNumber);
@@ -16,6 +18,7 @@ public class StackList implements IStack {
 			lastNode.getNextValue().setPreviousValue(lastNode); //automatycznie zmienione po enkapsulacji atrybutów z klasy Node
 			lastNode = lastNode.getNextValue();
 		}
+		total++;
 	}
 
 	public boolean isEmpty() {
@@ -23,7 +26,7 @@ public class StackList implements IStack {
 	}
 
 	public boolean isFull() {
-		return false;
+		return total == FULL_STACK_INDICATOR;
 	}
 
 	public int top() {
@@ -37,6 +40,7 @@ public class StackList implements IStack {
 			return EMPTY_STACK_INDICATOR;
 		int topValue = lastNode.getValue();
 		lastNode = lastNode.getPreviousValue();
+		total--;
 		return topValue;
 	}
 

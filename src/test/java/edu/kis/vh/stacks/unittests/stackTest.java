@@ -3,9 +3,12 @@ package edu.kis.vh.stacks.unittests;
 import org.junit.Assert;
 import org.junit.Test;
 
+import edu.kis.vh.stacks.IStack;
 import edu.kis.vh.stacks.Stack;
 import edu.kis.vh.stacks.StackHanoi;
 import edu.kis.vh.stacks.factory.DefaultStacksFactory;
+import edu.kis.vh.stacks.types.StackArray;
+import edu.kis.vh.stacks.types.StackList;
 
 public class stackTest {
 	
@@ -32,10 +35,9 @@ public class stackTest {
 	}
 
 	@Test
-	public void testIsFull() {
+	public void testIsFullListStack() {
 		Stack stackObj = new Stack();
-		final int STACK_CAPACITY = 12;
-		for (int i = 0; i < STACK_CAPACITY; i++) {
+		for (int i = 0; i < StackList.FULL_STACK_INDICATOR; i++) {
 			boolean result = stackObj.isFull();		
 			Assert.assertEquals(false, result);
 			stackObj.push(888);
@@ -43,15 +45,40 @@ public class stackTest {
 		
 		boolean result = stackObj.isFull();
 		Assert.assertEquals(true, result);
+		
+		//Aby dany test przeszedł pozytywnie dodałem ograniczenie wielkości stosu klasy StackList 
+		//poprzez stworzenie atrybutu FULL_STACK_INDICATOR, a następnie przeniosłem go do interfejsu IStack,
+		//gdyż korzysta z niego StackArray.
+		//Przy tworzeniu obiektu klasy Stack przez konstruktor bezparametrowy korzystamy z klasy StackList, stąd taki pomysł.
+	}
+	
+	@Test
+	public void testIsFullArrayStack() {
+		
+		//Jeśli nie można ustawić z góry wielkości StackList dodaje drugi test,
+		//gdzie używam obiektu Stack opartego na StackArray.
+		//W tym przypadku zwiększyłem tablicę ITEMS w klasie StackArray na 13.
+		//Wydaje się to być naturalne, skoro w punkcie 3.1.11 ustawiliśmy
+		//wartość wskaznika pustego stosu z -1 na 0.
+		
+		Stack stackObj = new Stack(new StackArray());
+		for (int i = 0; i < StackArray.FULL_STACK_INDICATOR; i++) {
+			boolean result = stackObj.isFull();		
+			Assert.assertEquals(false, result);
+			stackObj.push(888);
+		}
+		
+		boolean result = stackObj.isFull();
+		Assert.assertEquals(true, result);
+		
 	}
 
 	@Test
 	public void testTop() {
 		Stack stackObj = new Stack();
-		final int EMPTY_STACK_VALUE = -1;
 		
 		int result = stackObj.top();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(IStack.EMPTY_STACK_INDICATOR, result);
 		
 		int testValue = 4;
 		stackObj.push(testValue);
@@ -65,10 +92,9 @@ public class stackTest {
 	@Test
 	public void testPop() {
 		Stack stackObj = new Stack();
-		final int EMPTY_STACK_VALUE = -1;
 		
 		int result = stackObj.pop();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(IStack.EMPTY_STACK_INDICATOR, result);
 		
 		int testValue = 4;
 		stackObj.push(testValue);
@@ -76,17 +102,16 @@ public class stackTest {
 		result = stackObj.pop();
 		Assert.assertEquals(testValue, result);
 		result = stackObj.pop();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(IStack.EMPTY_STACK_INDICATOR, result);
 	}
 
 	@Test
 	public void testFIFOPop() {
 		DefaultStacksFactory factory = new DefaultStacksFactory();
 		Stack stackObj = factory.getFIFOStack();
-		final int EMPTY_STACK_VALUE = -1;
 		
 		int result = stackObj.pop();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(IStack.EMPTY_STACK_INDICATOR, result);
 		
 		int testValue = 4;
 		stackObj.push(testValue);
@@ -94,7 +119,7 @@ public class stackTest {
 		result = stackObj.pop();
 		Assert.assertEquals(testValue, result);
 		result = stackObj.pop();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(IStack.EMPTY_STACK_INDICATOR, result);
 	}
 	
 	@Test

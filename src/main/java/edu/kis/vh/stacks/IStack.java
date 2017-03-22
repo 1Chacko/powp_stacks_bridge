@@ -3,6 +3,7 @@ package edu.kis.vh.stacks;
 public interface IStack {
 
 	public final int EMPTY_STACK_INDICATOR = 0;//final dodany wcześniej
+	public final int FULL_STACK_INDICATOR = 12;
 
 	void push(int i);
 
