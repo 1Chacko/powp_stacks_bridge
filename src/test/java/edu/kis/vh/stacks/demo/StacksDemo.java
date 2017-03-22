@@ -2,14 +2,21 @@ package edu.kis.vh.stacks.demo;
 
 import edu.kis.vh.stacks.StackHanoi;
 import edu.kis.vh.stacks.Stack;
+import edu.kis.vh.stacks.factory.ArrayStacksFactory;
 import edu.kis.vh.stacks.factory.DefaultStacksFactory;
+import edu.kis.vh.stacks.factory.IStacksFactory;
+import edu.kis.vh.stacks.factory.ListStacksFactory;
 
 class StacksDemo {
 
 	public static void main(String[] args) {
 		DefaultStacksFactory factory = new DefaultStacksFactory();
+		ArrayStacksFactory arrayFactory = new ArrayStacksFactory();
+		ListStacksFactory listFactory = new ListStacksFactory();
 		
 		testStacks(factory);
+		testStacks(arrayFactory);
+		testStacks(listFactory);
 		
 		//plik StacksDemo.java:
 		//linia 32 z System.out.println, zamiast 2 wierszy w jednym
@@ -25,7 +32,7 @@ class StacksDemo {
 		
 	}
 
-	private static void testStacks(DefaultStacksFactory factory) {
+	private static void testStacks(IStacksFactory factory) {
 		Stack[] stacks = { factory.getStandardStack(), factory.getFalseStack(), factory.getFIFOStack(), factory.getHanoiStack()};
 		
 		for (int i = 1; i < 15; i++) {
