@@ -4,7 +4,7 @@ import edu.kis.vh.stacks.IStack;
 
 public class StackArray implements IStack{
 	
-	private int[] ITEMS = new int[13];	
+	private int[] ITEMS = new int[12];	
 
 	private int total = EMPTY_STACK_INDICATOR;
 	
@@ -15,7 +15,7 @@ public class StackArray implements IStack{
 	@Override
 	public void push(int i) {
 		if (!isFull())
-			ITEMS[++total] = i;
+			ITEMS[total++] = i;
 	}
 	
 	@Override
