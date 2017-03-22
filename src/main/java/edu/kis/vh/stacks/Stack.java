@@ -39,4 +39,10 @@ public class Stack {
 	
 	//Mozemy wyslac do konstruktora klase implementujaca  interfejs IStack
 	//dzięki czemu możemy okreslic sposob implementacji stosu
+	
+	//Używając klawisza (F3) przeskakujemy do deklaracji metody w iterfejsie IStack
+	//Używając kombinacji (ctrl + t) wyświetla się okno z interfejsem implementującym daną metodę
+	//i klasy tą metodę implementujące
+	//Natomiast korzystając z (ctrl + kursor) otwiera sie małe menu z wyborem do przejścia
+	//w miejsce deklaracji lub implementacji danej metody
 }
