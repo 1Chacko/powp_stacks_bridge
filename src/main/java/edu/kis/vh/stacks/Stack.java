@@ -6,9 +6,9 @@ public class Stack {
 
 	private IStack intStack;
 	
-	public Stack(StackList stackList) {
+	public Stack(IStack istack) {
 		super();
-		this.intStack = stackList;
+		this.intStack = istack;
 	}
 
 	public Stack() {
